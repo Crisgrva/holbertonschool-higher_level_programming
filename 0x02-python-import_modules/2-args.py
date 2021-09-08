@@ -6,6 +6,8 @@ if __name__ == "__main__":
 
     if argvlen == 2:
         nargv = " argument:"
+    elif argvlen == 1:
+        nargv = " arguments."
     else:
         nargv = " arguments:"
 
