@@ -1,2 +1,2 @@
-#!/usr/bin/python
-import print_alphabet_upper
+#!/usr/bin/python3
+import print_alphabet
