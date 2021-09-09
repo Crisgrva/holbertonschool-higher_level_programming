@@ -2,6 +2,8 @@
 <h3 align="center">Learning to program in Python</h3>
 
 - 👋 0x00. Python - Hello, World
+- 🔁 0x01. Python - if/else, loops, functions
+- 📖 0x02. Python - import & modules
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
