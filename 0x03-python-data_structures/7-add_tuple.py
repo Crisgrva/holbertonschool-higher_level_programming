@@ -35,7 +35,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         return new_duple
 
     if len(tuple_a) == 0 and len(tuple_b) == 1:
-        new_duple = (0, tuple_b[0])
+        new_duple = (tuple_b[0], 0)
 
     new_duple = (0, 0)
     return new_duple
