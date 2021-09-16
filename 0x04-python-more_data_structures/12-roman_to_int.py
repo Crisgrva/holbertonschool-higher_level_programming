@@ -10,10 +10,12 @@ def roman_to_int(roman_string):
            "M": 1000,
            }
     result = 0
+    if (type(roman_string) is not str) == True:
+        return 0
     fst_num = romans.get(roman_string[0])
     for x in range(len(roman_string)):
         if fst_num < int(romans.get(roman_string[x])):
             result = romans.get(roman_string[x]) - result
         else:
-            result += romans.get(roman_string[x])
+            result = romans.get(roman_string[x]) + result
     return result
