@@ -12,7 +12,6 @@ def roman_to_int(roman_string):
     result = 0
     fst_num = romans.get(roman_string[0])
     for x in range(len(roman_string)):
-        print(int(romans.get(roman_string[x])))
         if fst_num < int(romans.get(roman_string[x])):
             result = romans.get(roman_string[x]) - result
         else:
