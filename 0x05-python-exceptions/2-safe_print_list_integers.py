@@ -3,12 +3,12 @@ def safe_print_list_integers(my_list=[], x=0):
 
     count = 0
 
-    for num in my_list[:x]:
+    for num in range(0, x):
         try:
-            print("{:d}".format(num), end="")
+            print("{:d}".format(my_list[num]), end="")
             count += 1
         except (TypeError, ValueError):
-            continue
+            pass
 
     print()
     return count
