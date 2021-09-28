@@ -3,4 +3,7 @@ class Square:
     """Empty class Square that defines a square.
     Starting to use Comments in Python
     """
-    pass
+Square.__dict__
+"""
+atributtes
+"""
