@@ -14,7 +14,14 @@ print("--")
 my_square_3 = Square(3, (3, 0))
 my_square_3.my_print()
 
+print("--3x3")
+
+my_square_3 = Square(3, (3, 3))
+my_square_3.my_print()
+
 print("--")
+
+
 
 try:
     my_square_3 = Square(3, ("asd", 0))

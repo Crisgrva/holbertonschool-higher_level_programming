@@ -58,7 +58,8 @@ class Square:
         if self.__size == 0:
             print()
         if y > 0:
-            print("{}".format(spcy))
+            for stls in range(0, y):
+                print("{}".format(spcy))
         for px in range(0, self.__size):
             print("{}".format(" " * x), end="")
             for py in range(0, self.__size):
