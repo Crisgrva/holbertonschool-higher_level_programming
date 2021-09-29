@@ -17,10 +17,10 @@ class Rectangle:
         elif isph is False:
             raise Exception("height must be an integer")
 
-        if width < 0:
-            raise Exception("width must be >= 0")
-        elif height < 0:
+        if height < 0:
             raise Exception("height must be >= 0")
+        elif width < 0:
+            raise Exception("width must be >= 0")
 
         self.__height = height
         self.__width = width
