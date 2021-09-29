@@ -7,7 +7,6 @@ class Square:
     (based on 2-square.py)
     """
     def __init__(self, size=0, position=(0, 0)):
-
         ispx = isinstance(position[0], int)
         ispy = isinstance(position[1], int)
 
@@ -16,7 +15,7 @@ class Square:
         elif size < 0:
             raise Exception("size must be >= 0")
 
-        if (ispx is False) or (ispy is False):
+        if ispx is False or ispy is False:
             raise Exception("position must be a tuple of 2 positive integers")
         elif position[0] < 0 or position[1] < 0:
             raise Exception("position must be a tuple of 2 positive integers")
