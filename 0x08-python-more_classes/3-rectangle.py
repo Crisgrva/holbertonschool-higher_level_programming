@@ -50,9 +50,10 @@ class Rectangle:
 
         if self.__width == 0 or self.__height == 0:
             return str_print
-
-        for h in range(self.__height + 1):
+        h = 1
+        while h <= self.__height:
             str_print += "#" * self.__width
             if h < self.__height:
                 str_print += "\n"
+            h += 1
         return str_print
