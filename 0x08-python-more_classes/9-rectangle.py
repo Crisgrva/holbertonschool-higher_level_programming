@@ -58,8 +58,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        new_Rectangle = cls(size, size)
-        return new_Rectangle
+        new_rectangle = cls(size, size)
+        return new_rectangle
 
     def area(self):
         return(self.__height * self.__width)
