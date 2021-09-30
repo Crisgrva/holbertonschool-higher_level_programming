@@ -51,7 +51,7 @@ class Rectangle:
 
     def __str__(self):
         str_print = ""
-        print_repr = Rectangle.print_symbol
+        print_repr = str(self.print_symbol)
 
         if self.__width == 0 or self.__height == 0:
             return str_print
