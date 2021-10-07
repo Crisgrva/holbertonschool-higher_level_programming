@@ -1,0 +1,38 @@
+===============================
+ 3. Print square
+===============================
+
+Write a function that prints a square with the character # with def print_square(size).
+
+Numbers
+=======
+
+::
+    >>> print_square = __import__('4-print_square').print_square
+    >>> try:
+    ...     print_square("John")
+    ... except Exception as e:
+    ...     print(e)
+    size must be an integer
+
+::
+    >>> try:
+    ...     print_square(2)
+    ... except Exception as e:
+    ...     print(e)
+    ##
+    ##
+
+::
+    >>> try:
+    ...     print_square(-2)
+    ... except Exception as e:
+    ...     print(e)
+    size must be >= 0
+
+::
+    >>> try:
+    ...     print_square(2.2)
+    ... except Exception as e:
+    ...     print(e)
+    size must be an integer

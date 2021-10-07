@@ -1,0 +1,229 @@
+Testing function that prints a text with 2 new lines
+====================================================
+
+Importing file
+==============
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Function
+========
+Function that prints a text with 2 new lines
+after each of these characters: ., ? and :
+
+Valid argument
+==============
+
+    #Large string
+    >>> text_indentation("""
+    ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+    ... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+    ... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+    ... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
+    ... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
+    ... rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
+    ... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
+    ... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+    ... beatiorem! Iam ruinas videres
+    ... """)
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
+    Teneo, inquit, finem illi videri nihil dolere.
+    <BLANKLINE>
+    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+    <BLANKLINE>
+    Si id dicis, vicimus.
+    <BLANKLINE>
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
+    <BLANKLINE>
+    Sin aliud quid voles, postea.
+    <BLANKLINE>
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+    <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+    #String with multiple spaces
+    >>> text_indentation("""
+    ...      Lorem ipsum dolor sit amet, consectetur adipiscing elit.       \
+    ...     Quonam modo?      Utrum igitur tibi litteram videor an totas paginas commovere?        \
+    ... """)
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+
+    #String with spaces in the middle
+    >>> text_indentation("   H  E  L  L  O      ")
+    H  E  L  L  O
+
+    #String with spaces in the middle and a delimiter
+    >>> text_indentation("   H  E  L  L  O.      ")
+    H  E  L  L  O.
+    <BLANKLINE>
+
+    #String with spaces in the middle and two delimiters
+    >>> text_indentation("   H  E  L:  L  O.      ")
+    H  E  L:
+    <BLANKLINE>
+    L  O.
+    <BLANKLINE>
+
+    #String with spaces in the middle and three delimiters
+    >>> text_indentation("   H ? E  L:  L  O.      ")
+    H ?
+    <BLANKLINE>
+    E  L:
+    <BLANKLINE>
+    L  O.
+    <BLANKLINE>
+
+    #String with delimiters
+    >>> text_indentation("     H?E.L:L.O?W:O.R?L:D.      ")
+    H?
+    <BLANKLINE>
+    E.
+    <BLANKLINE>
+    L:
+    <BLANKLINE>
+    L.
+    <BLANKLINE>
+    O?
+    <BLANKLINE>
+    W:
+    <BLANKLINE>
+    O.
+    <BLANKLINE>
+    R?
+    <BLANKLINE>
+    L:
+    <BLANKLINE>
+    D.
+    <BLANKLINE>
+
+    #String with new lines and delimiters
+    >>> text_indentation("  \n.\n.   HELLO WORLD.      ")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    HELLO WORLD.
+    <BLANKLINE>
+
+    #String with new lines
+    >>> text_indentation("  \n\n   HELLO WORLD.      ")
+    HELLO WORLD.
+    <BLANKLINE>
+
+    #String with new lines
+    >>> text_indentation("  \n\n   HELLO\nWORLD.      ")
+    HELLO
+    WORLD.
+    <BLANKLINE>
+
+    #String with new lines
+    >>> text_indentation("  \n\n   HELLO   \n   WORLD.      ")
+    HELLO   
+       WORLD.
+    <BLANKLINE>
+
+    #String with new lines and delimiters
+    >>> text_indentation("  \n.  HELLO\nWORLD.  \n?  ")
+    .
+    <BLANKLINE>
+    HELLO
+    WORLD.
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+    #String with new line
+    >>> text_indentation("      HELLO   WORLD\n.      ")
+    HELLO   WORLD
+    .
+    <BLANKLINE>
+
+    #String with only delimiters and spaces
+    >>> text_indentation("    .     ?     :      ")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Non-valid argument
+==============
+
+    #No argument
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    #Negative int
+    >>> text_indentation(-2)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #None
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #Int-str
+    >>> text_indentation(1j2)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+    #Float-str
+    >>> text_indentation(1.j2)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+    #Float
+    >>> text_indentation(1.2)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #Bool
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #List
+    >>> text_indentation([1, 2])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #List of lists
+    >>> text_indentation([[1, 2], [3, 4]])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #Tuple
+    >>> text_indentation((1, 2))
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #Dictionary
+    >>> text_indentation({"a": 1})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    #Variable undefined
+    >>> text_indentation(undefined)
+    Traceback (most recent call last):
+    NameError: name 'undefined' is not defined
+

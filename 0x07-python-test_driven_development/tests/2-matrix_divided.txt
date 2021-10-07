@@ -1,0 +1,76 @@
+===============================
+ Test for 1. Divide a matrix 
+===============================
+
+Write a function that divides all elements of a matrix with ``matrix_divided()``.
+
+Numbers
+=======
+
+Testing Integers
+
+::
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+::
+    >>> matrix = 5
+    >>> try:
+    ...     print(matrix_divided(matrix, 3))
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+::
+    >>> matrix = {
+    ...     "List":[1, 2, 3],
+    ...     "TwoList":[1, 2, 3]
+    ... }
+    >>> try:
+    ...     print(matrix_divided(matrix, 3))
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+::
+    >>> matrix = [
+    ...     ["Hello", 2, 3],
+    ...     [2, 3, 4]
+    ... ]
+    >>> try:
+    ...     print(matrix_divided(matrix, 3))
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+::
+    >>> matrix = [
+    ...    [True, 2, 3],
+    ...    [False, 2, 3]
+    ... ]
+    >>> try:
+    ...     print(matrix_divided(matrix, 3))
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+::
+    >>> matrix = [True, False] 
+    >>> try:
+    ...     print(matrix_divided(matrix, 3))
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+::
+    >>> matrix = []
+    >>> try:
+    ...     print(matrix_divided(matrix, 3))
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats

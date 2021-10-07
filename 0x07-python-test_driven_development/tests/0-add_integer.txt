@@ -1,0 +1,110 @@
+===============================
+ Test for 0-add_integer.py
+===============================
+
+Write a function that adds 2 integers with the function ``add_integer()``
+
+Numbers
+=======
+
+Testing Integers
+
+::
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+Testing add_integer(a)
+
+::
+    >>> add_integer(2)
+    100
+    
+    >> add_integer(2, )
+    100
+
+Testing negative numbers
+
+::
+    >>> add_integer(-2, -2)
+    -4
+
+::
+    >>> add_integer(3, -2)
+    1
+
+::
+    >>> add_integer(-3, 2)
+    -1
+
+Tuples
+=======
+
+::
+    >>> try:
+    ...     add_integer((2, 2), (2, 2))
+    ... except Exception as e:
+    ...     print(e)
+    a must be an integer
+
+::
+    >>> try:
+    ...     add_integer((2, 2), )
+    ... except Exception as e:
+    ...     print(e)
+    a must be an integer
+
+::
+    >>> try:
+    ...     add_integer(5, (2, 2))
+    ... except Exception as e:
+    ...     print(e)
+    b must be an integer
+
+Strings
+=======
+::
+    >>> try:
+    ...    add_integer("Holberton", 2)
+    ... except Exception as e:
+    ...    print(e)
+    a must be an integer
+
+::
+    >>> try:
+    ...    add_integer(2, "Holberton")
+    ... except Exception as e:
+    ...    print(e)
+    b must be an integer
+
+None
+=======
+::
+    >>> try:
+    ...    add_integer(None)
+    ... except Exception as e:
+    ...    print(e)
+    a must be an integer
+
+::
+    >>> try:
+    ...    add_integer(3, None)
+    ... except Exception as e:
+    ...    print(e)
+    b must be an integer
+
+Boolean
+=======
+::
+    >>> try:
+    ...    add_integer(True, 3)
+    ... except Exception as e:
+    ...    print(e)
+    a must be an integer
+
+::
+    >>> try:
+    ...    add_integer(3, False)
+    ... except Exception as e:
+    ...    print(e)
+    b must be an integer

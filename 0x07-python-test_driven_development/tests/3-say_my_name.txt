@@ -1,0 +1,64 @@
+===============================
+ 2. Say my name
+===============================
+
+Write a function that prints My name is <first name> <last name> with ``def say_my_name(first_name, last_name="")``
+
+Numbers
+=======
+
+::
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+::
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+::
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+::
+    >>> try:
+    ...     say_my_name(12, "White")
+    ... except Exception as e:
+    ...     print(e)
+    first_name must be a string
+
+::
+    >>> try:
+    ...     say_my_name("John", 45)
+    ... except Exception as e:
+    ...     print(e)
+    last_name must be a string
+
+
+::
+    >>> try:
+    ...     say_my_name(True, "White")
+    ... except Exception as e:
+    ...     print(e)
+    first_name must be a string
+
+::
+    >>> try:
+    ...     say_my_name(False, "White")
+    ... except Exception as e:
+    ...     print(e)
+    first_name must be a string
+
+::
+    >>> try:
+    ...     say_my_name("Cristian", True)
+    ... except Exception as e:
+    ...     print(e)
+    last_name must be a string
+
+::
+    >>> try:
+    ...     say_my_name("Cristian", False)
+    ... except Exception as e:
+    ...     print(e)
+    last_name must be a string
