@@ -13,8 +13,8 @@ class Rectangle(BaseGeometry):
     BaseGeometry (7-base_geometry.py).
     """
     def __init__(self, width, height):
-        if self.integer_validator(width, width):
+        if self.integer_validator("width", width):
             self.__width = width
 
-        if self.integer_validator(height, height):
+        if self.integer_validator("height", height):
             self.__height = height
