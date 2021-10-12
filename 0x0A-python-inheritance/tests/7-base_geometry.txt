@@ -30,3 +30,17 @@ Write a class MyList that inherits from list:
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [ValueError] distance must be greater than 0
+
+::
+    >>> try:
+    ...     bg.integer_validator("distance", 1.0)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] distance must be an integer
+
+::
+    >>> try:
+    ...     bg.integer_validator("name", 1, 2, 3)
+    ... except Exception as e:
+    ...     print(e)
+    integer_validator() takes 3 positional arguments but 5 were given
