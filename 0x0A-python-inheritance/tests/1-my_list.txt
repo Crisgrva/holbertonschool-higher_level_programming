@@ -4,11 +4,6 @@
 
 Write a class MyList that inherits from list:
 
-Numbers
-=======
-
-Testing Integers
-
 ::
     >>> MyList = __import__('1-my_list').MyList
     >>> my_list = MyList()
@@ -24,5 +19,36 @@ Testing Integers
     >>> print(my_list)
     [1, 4, 2, 3, 5]
 
-Boolean
-=======
+::
+    >>> try:
+    ...     new_list = MyList()
+    ...     MyList.append(True)
+    ... except Exception as e:
+    ...     print(e)
+    descriptor 'append' for 'list' objects doesn't apply to a 'bool' object
+
+::
+    >>> try:
+    ...     new_list = MyList(1, 1)
+    ... except TypeError as e:
+    ...     print(e)
+    list expected at most 1 argument, got 2
+
+::
+    >>> new_list = MyList()
+    >>> new_list.append("z")
+    >>> new_list.append("a")
+    >>> print(new_list)
+    ['z', 'a']
+    >>> new_list.print_sorted()
+    ['a', 'z']
+
+::
+    >>> new_list = MyList()
+    >>> new_list.append(True)
+    >>> new_list.append(True)
+    >>> new_list.append(False)
+    >>> print(new_list)
+    [True, True, False]
+    >>> new_list.print_sorted()
+    [False, True, True]
