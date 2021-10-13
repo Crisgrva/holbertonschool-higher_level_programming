@@ -45,14 +45,24 @@ def print_line(lista=[], stats={}, rlly_filesize=0):
     print("File size: {}".format(rlly_filesize))
 
 
-while True:
-    for line in stdin:
-        new_list.append(line)
-        filesize += int(line.split()[-1])
-        y += 1
-        if y == 10:
-            print_line(new_list, stats, filesize)
-            y = 0
-            break
+def initializer():
+    """
+    drive programm
+    """
+    while True:
+        filesize = 0
+        y = 0
+        for line in stdin:
+            new_list.append(line)
+            filesize += int(line.split()[-1])
+            y += 1
+            if y == 10:
+                print_line(new_list, stats, filesize)
+                y = 0
+                break
 
-    signal.signal(signal.SIGINT, signal_handler)
+        signal.signal(signal.SIGINT, signal_handler)
+
+
+if not stdin.isatty():
+    initializer()
