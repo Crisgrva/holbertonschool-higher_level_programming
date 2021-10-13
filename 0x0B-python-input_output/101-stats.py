@@ -45,12 +45,11 @@ def print_line(lista=[], stats={}, rlly_filesize=0):
     print("File size: {}".format(rlly_filesize))
 
 
-def initializer():
+def initializer(filesize=0):
     """
     drive programm
     """
     while True:
-        filesize = 0
         y = 0
         for line in stdin:
             new_list.append(line)
@@ -64,5 +63,5 @@ def initializer():
         signal.signal(signal.SIGINT, signal_handler)
 
 
-#if not stdin.isatty():
-#    initializer()
+if not stdin.isatty():
+    initializer(filesize)
