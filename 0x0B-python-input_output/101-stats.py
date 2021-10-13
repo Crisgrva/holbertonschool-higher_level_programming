@@ -8,9 +8,18 @@ from sys import stdin, exit
 
 filesize = 0
 count = 0
-x = 0
 y = 0
 new_list = []
+stats = {
+        '200': 0,
+        '301': 0,
+        '400': 0,
+        '401': 0,
+        '403': 0,
+        '404': 0,
+        '405': 0,
+        '500': 0
+        }
 
 
 def signal_handler(sig, frame):
@@ -21,14 +30,19 @@ def signal_handler(sig, frame):
     exit(0)
 
 
-def print_line(lista=[]):
+def print_line(lista=[], stats={}, rlly_filesize=0):
     """
     print lines
     """
     for x in lista[-10:]:
         status_code = x.split()[-2]
-        print("{}".format(status_code))
-    print("File size: {}".format(filesize))
+        if status_code in stats.keys():
+            stats[status_code] += 1
+
+    for key in stats:
+        if stats[key] != 0:
+            print("{}: {}".format(key, stats[key]))
+    print("File size: {}".format(rlly_filesize))
 
 
 while True:
@@ -37,7 +51,7 @@ while True:
         filesize += int(line.split()[-1])
         y += 1
         if y == 10:
-            print_line(new_list)
+            print_line(new_list, stats, filesize)
             y = 0
             break
 
