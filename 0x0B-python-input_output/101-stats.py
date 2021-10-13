@@ -64,5 +64,5 @@ def initializer():
         signal.signal(signal.SIGINT, signal_handler)
 
 
-if not stdin.isatty():
-    initializer()
+#if not stdin.isatty():
+#    initializer()
