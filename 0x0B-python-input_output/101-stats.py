@@ -12,16 +12,24 @@ x = 0
 y = 0
 new_list = []
 
+
 def signal_handler(sig, frame):
+    """
+    signal handler
+    """
     print("File size: {}".format(filesize))
     exit(0)
 
+
 def print_line(lista=[]):
+    """
+    print lines
+    """
     for x in lista[-10:]:
         status_code = x.split()[-2]
         print("{}".format(status_code))
     print("File size: {}".format(filesize))
-    
+
 
 while True:
     for line in stdin:
@@ -32,6 +40,5 @@ while True:
             print_line(new_list)
             y = 0
             break
-    
-    signal.signal(signal.SIGINT, signal_handler)
 
+    signal.signal(signal.SIGINT, signal_handler)
