@@ -141,3 +141,16 @@ class Rectangle(Base):
         self.__height = _height if _height is not None else self.__height
         self.__x = _x if _x is not None else self.__x
         self.__y = _y if _y is not None else self.__y
+
+    def to_dictionary(self):
+        """
+        returns the dictionary representation of a Rectangle
+        """
+        R_dict = {
+                "x": self.__x,
+                "y": self.__y,
+                "id": self.id,
+                "height": self.__height,
+                "width": self.__width,
+                }
+        return R_dict
