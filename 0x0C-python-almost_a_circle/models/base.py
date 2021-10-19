@@ -104,7 +104,20 @@ class Base:
         """
         Save instances to CSV
         """
-        pass
+        if cls.__name__ == "Rectangle":
+            with open("{}.csv".format(cls.__name__), "w") as f:
+                for item in list_objs:
+                    new = item.to_dictionary()
+                    f.write("{},{},{},{},{}\n".format(new.get("id"),
+                            new.get("width"), new.get("height"), new.get("x"),
+                            new.get("y")))
+
+        if cls.__name__ == "Square":
+            with open("{}.csv".format(cls.__name__), "w") as f:
+                for item in list_objs:
+                    new = item.to_dictionary()
+                    f.write("{},{},{},{}\n".format(new.get("id"),
+                            new.get("size"), new.get("x"), new.get("y")))
 
     @classmethod
     def load_from_file_csv(cls):
