@@ -63,3 +63,15 @@ class Square(Rectangle):
             self.size = _size if _size is not None else self.size
             self.x = _x if _x is not None else self.x
             self.y = _y if _y is not None else self.y
+
+    def to_dictionary(self):
+        """
+         the dictionary representation of a Square
+        """
+        S_dict = {
+                "id": self.id,
+                "x": self.x,
+                "size": self.size,
+                "y": self.y,
+                }
+        return S_dict
