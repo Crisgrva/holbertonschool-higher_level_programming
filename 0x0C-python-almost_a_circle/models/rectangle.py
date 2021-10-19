@@ -113,7 +113,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         1st argument should be the id attribute
         2nd argument should be the width attribute
@@ -121,11 +121,14 @@ class Rectangle(Base):
         4th argument should be the x attribute
         5th argument should be the y attribute
         """
-        try:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        except Exception:
-            pass
+        _id = kwargs.get("id")
+        _width = kwargs.get("width")
+        _height = kwargs.get("height")
+        _x = kwargs.get("x")
+        _y = kwargs.get("y")
+
+        self.id = _id if _id is not None else self.id
+        self.__width = _width if _width is not None else self.__width
+        self.__height = _height if _height is not None else self.__height
+        self.__x = _x if _x is not None else self.__x
+        self.__y = _y if _y is not None else self.__y
