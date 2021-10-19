@@ -104,9 +104,8 @@ class Rectangle(Base):
         """
          prints in stdout the Rectangle instance with the character #
         """
-        print("{}".format("\n" * self.__y), end="")
         for x in range(self.__height):
-            print("{}{}".format(" " * self.__x, "#" * self.__width))
+            print("{}".format("#" * self.__width))
 
     def __str__(self):
         """overriding the __str__"""
