@@ -91,23 +91,20 @@ class Base:
         lists = []
         try:
             with open("{}.json".format(cls.__name__),
-                    "r", encoding="utf-8") as f:
+                      "r", encoding="utf-8") as f:
                 dicts = cls.from_json_string(f.read())
                 for item in dicts:
                     lists.append(cls.create(**item))
                 return lists
         except FileNotFoundError:
             return []
-    
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
         Save instances to CSV
         """
-        pass 
-
-
+        pass
 
     @classmethod
     def load_from_file_csv(cls):
@@ -116,7 +113,8 @@ class Base:
         """
         lists = []
         try:
-            with open("{}.csv".format(cls.__name__), "r", encoding="utf-8") as f:
+            with open("{}.csv".format(cls.__name__),
+                      "r", encoding="utf-8") as f:
                 reader = csv.DictReader(f)
                 items = list(reader)
             for item in items:
@@ -124,5 +122,3 @@ class Base:
             return lists
         except FileNotFoundError:
             return []
-
-       
