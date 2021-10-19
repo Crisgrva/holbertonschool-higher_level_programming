@@ -16,7 +16,6 @@ class Rectangle(Base):
     greater_0_error = "must be > 0"
     geater_or_iqual_0_error = "must be >= 0"
 
-
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
