@@ -99,3 +99,15 @@ class Rectangle(Base):
     def area(self):
         """Area method"""
         return self.__height * self.__width
+
+    def display(self):
+        """
+         prints in stdout the Rectangle instance with the character #
+        """
+        for x in range(self.__height):
+            print("{}".format("#" * self.__width))
+
+    def __str__(self):
+        """overriding the __str__"""
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
