@@ -23,4 +23,4 @@ class Square(Rectangle):
         """overloading __str__"""
 
         return "[Square] {} {}/{} - {}"\
-            .format(id, self.x, self.y, self.size)
+            .format(self.id, self.x, self.y, self.size)
