@@ -17,6 +17,7 @@ class Rectangle(Base):
     geater_or_iqual_0_error = "must be >= 0"
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Init"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -25,10 +26,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Getter method fot width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter method for width"""
         if isinstance(value, bool):
             raise TypeError("width " + Rectangle.int_error)
         if not isinstance(value, int):
@@ -41,10 +44,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Getter method for height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setter Method for height"""
         if isinstance(value, bool):
             raise TypeError("height " + Rectangle.int_error)
         if not isinstance(value, int):
@@ -57,10 +62,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Getter for X"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Setter Method for X"""
         if isinstance(value, bool):
             raise TypeError("x " + Rectangle.int_error)
         if not isinstance(value, int):
@@ -73,10 +80,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Getter for Y"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Setter Method for Y"""
         if isinstance(value, bool):
             raise TypeError("y " + Rectangle.int_error)
         if not isinstance(value, int):
@@ -88,4 +97,5 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Area method"""
         return self.__height * self.__width
