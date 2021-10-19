@@ -5,6 +5,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -81,3 +82,47 @@ class Base:
             dummy = cls(1)
             dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Load from JSON
+        """
+        lists = []
+        try:
+            with open("{}.json".format(cls.__name__),
+                    "r", encoding="utf-8") as f:
+                dicts = cls.from_json_string(f.read())
+                for item in dicts:
+                    lists.append(cls.create(**item))
+                return lists
+        except FileNotFoundError:
+            return []
+    
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Save instances to CSV
+        """
+        pass 
+
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Load from CSV
+        """
+        lists = []
+        try:
+            with open("{}.csv".format(cls.__name__), "r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                items = list(reader)
+            for item in items:
+                lists.append(cls.create(**item))
+            return lists
+        except FileNotFoundError:
+            return []
+
+       
