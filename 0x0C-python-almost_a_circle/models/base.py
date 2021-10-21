@@ -6,6 +6,8 @@
 
 import json
 import csv
+import turtle
+from time import sleep
 
 
 class Base:
@@ -135,3 +137,54 @@ class Base:
             return lists
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw shapes"""
+        t = turtle.Turtle()
+        turtle.bgcolor("#c6ffb5")
+        for shape in list_rectangles:
+            width = shape.width
+            height = shape.height
+
+            t.pendown()
+
+            t.forward(width)
+            t.left(90)
+
+            t.forward(height)
+            t.left(90)
+
+            t.forward(width)
+            t.left(90)
+
+            t.forward(height)
+            t.left(90)
+
+            t.penup()
+
+            sleep(.5)
+            t.clear()
+
+        for shape in list_squares:
+            width = shape.width
+            height = shape.height
+
+            t.pendown()
+
+            t.forward(width)
+            t.left(90)
+
+            t.forward(height)
+            t.left(90)
+
+            t.forward(width)
+            t.left(90)
+
+            t.forward(height)
+            t.left(90)
+
+            t.penup()
+
+            sleep(.5)
+            t.clear()
