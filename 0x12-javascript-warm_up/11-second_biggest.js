@@ -1,5 +1,8 @@
 #!/usr/local/bin/node
 const { argv } = require('process');
-const numbers = Array.from(argv).slice(2).sort();
-const lstNum = numbers[numbers.length - 2];
-argv.length > 3 ? console.log(lstNum) : console.log('0');
+const newArray = [];
+Array.from(argv).slice(2).forEach(element =>
+  newArray.push(parseInt(element)));
+
+console.log(newArray.sort(
+  function (a, b) { return a - b; })[newArray.length - 2]);
