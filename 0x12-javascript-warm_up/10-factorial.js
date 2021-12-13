@@ -1,10 +1,10 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const { argv } = require('process');
 const number = parseInt(argv[2]);
-let total = 1;
 
-for (let i = 1; i <= number; i++) {
-  total *= i;
+function Factorial (number) {
+  if (number === 0 || !number) { return 1; }
+  return (number * Factorial(number - 1));
 }
 
-console.log(total);
+console.log(Factorial(number));
