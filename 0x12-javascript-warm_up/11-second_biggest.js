@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const { argv } = require('process');
 const newArray = [];
 if (argv.length > 3) {
