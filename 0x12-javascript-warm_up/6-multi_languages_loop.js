@@ -2,7 +2,7 @@
 const multiLanguages = [
   'C is fun',
   'Python is cool',
-  'Javascript is amazing'
+  'JavaScript is amazing'
 ];
 
 for (let i = 0; multiLanguages[i]; i++) {
