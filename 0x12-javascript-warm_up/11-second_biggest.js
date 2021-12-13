@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const { argv } = require('process');
 const numbers = Array.from(argv).slice(2).sort();
 const lstNum = numbers[numbers.length - 2];
