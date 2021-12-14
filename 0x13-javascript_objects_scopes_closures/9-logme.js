@@ -1,12 +1,6 @@
 #!/usr/bin/node
-class counter {
-  static globalCounter = 0;
-  constructor(){
-    this.counter = counter.globalCounter;
-    counter.globalCounter++;
-  }
-}
+let num = 0;
 exports.logMe = function (item) {
-  let tmp = new counter()
-  console.log( `${tmp.counter}: ${item}`);
+  console.log(`${num}: ${item}`);
+  num++;
 };
