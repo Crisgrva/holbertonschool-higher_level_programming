@@ -7,6 +7,6 @@ class baseConvert {
 }
 
 exports.converter = function (base) {
-  new baseConvert()
+  new baseConvert();
   return (parseInt);
 };

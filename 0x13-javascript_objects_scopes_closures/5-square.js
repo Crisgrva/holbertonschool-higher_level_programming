@@ -6,4 +6,4 @@ module.exports =
     constructor (size) {
       super(size, size);
     }
-};
+  };

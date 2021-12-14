@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const converter = require('./10-converter').converter;
-let num = 12;
+const num = 12;
 console.log(num.toString(16));
 // let myConverter = converter(10)
 

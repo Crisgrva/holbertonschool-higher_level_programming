@@ -7,8 +7,8 @@ module.exports =
         this.height = h;
       }
     }
+
     print () {
-      for (let i = 0; i < this.height; i++)
-        console.log('X'.repeat(this.width));
+      for (let i = 0; i < this.height; i++) { console.log('X'.repeat(this.width)); }
     }
-};
+  };
