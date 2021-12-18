@@ -31,7 +31,8 @@ def my_filter_states():
 
     """ EXECUTING SQL QUERY """
     cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(usr_input))
+        "SELECT id, name FROM states WHERE name = '{}'\
+             ORDER BY states.id ASC".format(usr_input))
 
     """ FETCHING DATA """
     states = cur.fetchall()
