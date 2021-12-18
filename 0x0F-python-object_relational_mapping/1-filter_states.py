@@ -9,7 +9,9 @@ import MySQLdb
 
 def filter_states():
     """ SQL INFO FROM ARGV """
-    sql_usrname, sql_password, sql_database = argv[1], argv[2], argv[3]
+    sql_usrname = argv[1]
+    sql_password = argv[2]
+    sql_database = argv[3]
     host = "localhost"
     port = 3306
 
