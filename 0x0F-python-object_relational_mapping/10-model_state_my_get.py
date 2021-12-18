@@ -22,10 +22,10 @@ if __name__ == "__main__":
     """
     Fecthing data
     """
-    instance = session.query(State).filter(State.name == sys.argv[4]).one()
-    if(instance):
+    try:
+        instance = session.query(State).filter(State.name == sys.argv[4]).one()
         print(f"{instance.id}")
-    else:
+    except Exception:
         print('Not found')
 
     session.close()
