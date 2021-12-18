@@ -31,7 +31,7 @@ def my_filter_states():
 
     """ EXECUTING SQL QUERY """
     cur.execute(
-        "SELECT id, name FROM states WHERE name = '{}'\
+        "SELECT * FROM states WHERE name LIKE BINARY '{}'\
              ORDER BY states.id ASC".format(usr_input))
 
     """ FETCHING DATA """

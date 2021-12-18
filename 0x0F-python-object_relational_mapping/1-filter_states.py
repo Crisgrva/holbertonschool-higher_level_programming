@@ -28,7 +28,7 @@ def filter_states():
     """ EXECUTING SQL QUERY """
     cur.execute(
         "SELECT id, name FROM states WHERE name\
-            LIKE 'N%' ORDER BY states.id ASC")
+            LIKE BINARY 'N%' ORDER BY states.id ASC")
 
     """ FETCHING DATA """
     states = cur.fetchall()
