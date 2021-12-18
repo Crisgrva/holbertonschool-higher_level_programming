@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from sys import argv
-import MySQLdb
 """
 Write a script that lists all states with a name
 starting with N (upper N) from the database hbtn_0e_0_usa:
 """
+from sys import argv
+import MySQLdb
 
 
 def filter_states():

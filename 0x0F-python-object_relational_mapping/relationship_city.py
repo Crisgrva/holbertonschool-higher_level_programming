@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-from sqlalchemy.ext.declarative import declarative_base
-from model_state import Base
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
 """
 Write a Python file similar to model_state.py
 named model_city.py that contains the class
 definition of a City.
 """
+from sqlalchemy.ext.declarative import declarative_base
+from model_state import Base
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 
