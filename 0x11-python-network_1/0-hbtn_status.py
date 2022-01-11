@@ -19,4 +19,5 @@ def get_response(url: str):
         - utf8 content: {html.decode('utf-8')}""")
 
 
-print(get_response("https://intranet.hbtn.io/status"))
+if __name__ == "__main__":
+    print(get_response("https://intranet.hbtn.io/status"))
