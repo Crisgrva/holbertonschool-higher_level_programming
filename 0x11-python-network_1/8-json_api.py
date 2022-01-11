@@ -11,9 +11,7 @@ if __name__ == "__main__":
     from sys import argv
 
     url = "http://0.0.0.0:5000/search_user"
-    payload = {
-        "q": argv[1],
-    }
+    payload = {"q": argv[1]} if len(argv) > 1 else ""
 
     response = requests.post(url, data=payload)
     try:
