@@ -2,15 +2,13 @@
 """
 Write a Python script that fetches https://intranet.hbtn.io/status
 """
-
-from urllib import request
-
 if __name__ == "__main__":
+    from urllib import request
     url = "https://intranet.hbtn.io/status"
 
     with request.urlopen(url) as response:
         html = response.read()
-        print(f"""Body response:
-\t- type: {type(html)}
-\t- content: {html}
-\t- utf8 content: {html.decode('utf-8')}""")
+        print("Body response:")
+        print(f"\t- type: {type(html)}")
+        print(f"\t- content: {html}")
+        print(f"\t- utf8 content: {html.decode('utf-8')}")
