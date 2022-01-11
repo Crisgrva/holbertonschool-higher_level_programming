@@ -16,10 +16,10 @@ if __name__ == "__main__":
     response = requests.post(url, data=payload)
     try:
         data = response.json()
-    except Exception as e:
+    except ValueError as e:
         print("Not a valid JSON")
 
-    try:
-        print("[{}] {}".format(data["id"], data["name"]))
-    except Exception as e:
-        print("No result")
+    result = "[{}] {}".format(data["id"], data["name"]) if len(
+        response) != 0 else "No result"
+
+    print(result)
