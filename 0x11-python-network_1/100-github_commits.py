@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     repo = argv[1]
     username = argv[2]
-    URL = "https://api.github.com/repos/{}/{}/commits".format(repo, username)
+    URL = "https://api.github.com/repos/{}/{}/commits".format(username, repo)
 
     response = requests.get(URL)
     for commit in response.json()[:10]:
