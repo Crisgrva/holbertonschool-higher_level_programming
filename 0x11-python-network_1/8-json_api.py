@@ -11,12 +11,12 @@ if __name__ == "__main__":
     from sys import argv
 
     url = "http://0.0.0.0:5000/search_user"
-    payload = {"q": argv[1]} if len(argv) > 1 else ""
+    payload = {"q": argv[1]} if len(argv) > 1 else {"q": ""}
 
     response = requests.post(url, data=payload)
     try:
         data = response.json()
-    except Exception as e:
+    except ValueError as e:
         print("Not a valid JSON")
 
     if len(data) > 0:
