@@ -14,9 +14,9 @@ def get_response(url: str):
     with urllib.request.urlopen(url) as response:
         html = response.read()
         return(f"""Body response:
-        - type: {type(html)}
-        - content: {html}
-        - utf8 content: {html.decode('utf-8')}""")
+    - type: {type(html)}
+    - content: {html}
+    - utf8 content: {html.decode('utf-8')}""")
 
 
 if __name__ == "__main__":
