@@ -14,17 +14,12 @@ request.get(url, function (error, response, body) {
 
   body = JSON.parse(body);
   // Creating all users
-  for (const user of body) { persons[user.userId] = []; }
+  for (const user of body) { persons[user.userId] = 0; }
 
   for (const user of body) {
     if (user.completed === true) {
-      persons[String(user.userId)].push(user.id);
+      persons[String(user.userId)]++;
     }
   }
-
-  const newDict = {};
-  for (const [key, value] of Object.entries(persons)) {
-    newDict[key] = value.length;
-  }
-  console.log(newDict);
+  console.log(persons);
 });
