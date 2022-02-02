@@ -19,10 +19,8 @@ request(url, function (error, response, body) {
     return;
   }
   body = JSON.parse(body);
-  for (let movies = 0; movies < body.count; movies++) {
-    if (body.results[movies].characters.indexOf(characterUrl) >= 0) {
-      counter++;
-    }
+  for (const movie of body.results) {
+    if (movie.characters.includes(characterUrl)) { counter++; }
   }
   console.log(counter);
 });
