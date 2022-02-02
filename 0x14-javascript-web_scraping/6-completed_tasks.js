@@ -13,12 +13,13 @@ request.get(url, function (error, response, body) {
   const persons = {};
 
   body = JSON.parse(body);
-  // Creating all users
-  for (const user of body) { persons[user.userId] = 0; }
-
   for (const user of body) {
-    if (user.completed === true) {
-      persons[String(user.userId)]++;
+    if (user.completed) {
+      if (persons[user.userId] === undefined) {
+        persons[user.userId] = 0;
+      } else {
+        persons[user.userId]++;
+      }
     }
   }
   console.log(persons);
