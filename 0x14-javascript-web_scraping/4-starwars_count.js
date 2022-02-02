@@ -9,7 +9,7 @@ const characterUrl = 'https://swapi-api.hbtn.io/api/people/18/';
 
 let counter = 0;
 
-request(url, function (error, response, body) {
+request.get(url, function (error, response, body) {
   if (error) {
     console.error(error);
     return;
