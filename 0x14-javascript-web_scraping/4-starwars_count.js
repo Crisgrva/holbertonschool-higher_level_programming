@@ -14,6 +14,10 @@ request(url, function (error, response, body) {
     console.error(error);
     return;
   }
+  if (response.statusCode !== 200) {
+    console.log(counter);
+    return;
+  }
   body = JSON.parse(body);
   for (let movies = 0; movies < body.count; movies++) {
     if (body.results[movies].characters.indexOf(characterUrl) > 0) {
