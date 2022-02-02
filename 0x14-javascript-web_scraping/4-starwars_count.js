@@ -5,7 +5,7 @@ const request = require('request');
 const process = require('process');
 
 const url = process.argv[2];
-const characterUrl = 'https://swapi-api.hbtn.io/api/people/18/';
+const characterUrl = /(18)/g;
 
 let counter = 0;
 
@@ -20,7 +20,9 @@ request.get(url, function (error, response, body) {
   }
   body = JSON.parse(body);
   for (const movie of body.results) {
-    if (movie.characters.includes(characterUrl)) { counter++; }
+    if (movie.characters.some(e => characterUrl.test(e))) {
+      counter++;
+    }
   }
   console.log(counter);
 });
