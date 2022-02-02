@@ -20,7 +20,7 @@ request(url, function (error, response, body) {
   }
   body = JSON.parse(body);
   for (let movies = 0; movies < body.count; movies++) {
-    if (body.results[movies].characters.indexOf(characterUrl) > 0) {
+    if (body.results[movies].characters.indexOf(characterUrl) >= 0) {
       counter++;
     }
   }
