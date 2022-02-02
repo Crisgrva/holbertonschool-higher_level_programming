@@ -20,6 +20,8 @@ request.get(url, function (error, response, body) {
   }
   body = JSON.parse(body);
   for (const movie of body.results) {
+    // Checking if an element of array
+    // return True testing with ReGex
     if (movie.characters.some(e => characterUrl.test(e))) {
       counter++;
     }
