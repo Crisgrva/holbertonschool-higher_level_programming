@@ -1,3 +1,4 @@
+// Script that toggle between 2 classes with Jquery
 $(document).ready(function () {
   const classes = ['red', 'green'];
   let switchs = 1;
